@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import duaHero from '../assets/dua-hero.jpeg'
 import { IMG } from '../data/assets'
 import { MotionSection } from '../components/ui/MotionSection'
-import { SocialLinks } from '../components/ui/SocialLinks'
 import { GlassCard } from '../components/ui/GlassCard'
 
 const ease = [0.22, 1, 0.36, 1]
