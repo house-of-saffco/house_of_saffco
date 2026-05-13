@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import officialLogo from '../../assets/logos/official-logo-2.png'
+import officialLogo from '../../assets/logos/saffco.svg'
 
 const nav = [
   { to: '/', label: 'Home' },
