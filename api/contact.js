@@ -15,8 +15,8 @@ import validator from 'validator'
 dotenv.config({ path: resolve(process.cwd(), '.env') })
 dotenv.config({ path: resolve(process.cwd(), '.env.local') })
 
-// const TO = 'management@houseofsaffco.com'
-const TO = 'shahinasakkeer@houseofsaffco.com'
+const TO = 'management@houseofsaffco.com'
+// const TO = 'shahinasakkeer@houseofsaffco.com'
 const FROM = 'House of Saffco <noreply@houseofsaffco.com>'
 // const FROM = 'onboarding@resend.dev'
 

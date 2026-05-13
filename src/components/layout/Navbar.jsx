@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import officialLogo from '../../assets/logos/official-logo-2.png'
 
 const nav = [
   { to: '/', label: 'Home' },
@@ -28,9 +29,13 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-obsidian/70 backdrop-blur-xl">
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-50" aria-hidden />
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 lg:px-10">
-        <Link to="/" className="group flex items-center gap-2">
-          <span className="font-display text-xl font-medium tracking-[0.12em] text-zinc-100 md:text-2xl">
-            House of <span className="text-gradient-gold">Saffco</span>
+        <Link to="/" className="group flex shrink-0 items-center" aria-label="House of Saffco">
+          <span className="relative block h-12 w-36 overflow-hidden sm:h-14 sm:w-40 md:h-16 md:w-48">
+            <img
+              src={officialLogo}
+              alt="House of Saffco"
+              className="h-8 w-auto object-contain md:h-20"
+            />
           </span>
         </Link>
 

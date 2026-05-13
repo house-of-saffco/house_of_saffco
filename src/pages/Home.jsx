@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import akeedhHero from '../assets/akeedh-hero.jpeg'
+import akeedh from '../assets/akeedh.png'
 import curaHero from '../assets/cura-hero.jpeg'
 import duaHero from '../assets/dua-hero.jpeg'
+import homeHero from '../assets/home.png'
 import { BrandShowcaseCard } from '../components/ui/BrandShowcaseCard'
 import { GlassCard } from '../components/ui/GlassCard'
 import { MotionSection } from '../components/ui/MotionSection'
@@ -110,7 +111,7 @@ export function Home() {
             to="/akeedh"
             name="Akeedh"
             tagline="Health & beauty, curated for modern life."
-            image={akeedhHero}
+            image={akeedh}
             accent="from-fuchsia-500/20"
           />
         </div>
@@ -153,7 +154,7 @@ export function Home() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="relative lg:col-span-5">
             <div className="aspect-[3/4] overflow-hidden rounded-2xl border border-white/10">
-              <img src={IMG.lifestyleBeauty} alt="" className="h-full w-full object-cover" />
+              <img src={homeHero} alt="" className="h-full w-full object-cover" />
             </div>
             <div className="pointer-events-none absolute -bottom-6 -right-6 h-40 w-40 rounded-full bg-champagne/20 blur-3xl" aria-hidden />
           </div>

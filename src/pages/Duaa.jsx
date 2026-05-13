@@ -52,7 +52,7 @@ export function Duaa() {
           <p className="mt-8 max-w-xl text-base leading-relaxed text-zinc-500 md:text-lg">
             Olfactive narratives composed like couture — intimate sillage, luminous materials, and the quiet
             confidence of wearing art every day.
-            The heritage of 
+            The heritage of middle east - from the heart of oman
           </p>
   
         </motion.div>

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { SocialLinks } from '../components/ui/SocialLinks'
 import { GlassCard } from '../components/ui/GlassCard'
 
 const ease = [0.22, 1, 0.36, 1]
@@ -151,8 +150,6 @@ export function Contact() {
               </a>
             </GlassCard>
 
-            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.3em] text-zinc-600">Social</p>
-            <SocialLinks className="mt-4" />
           </motion.div>
 
           <motion.div

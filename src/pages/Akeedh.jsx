@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import akeedhHero from '../assets/akeedh-hero.jpeg'
+import akeedh from '../assets/akeedh.png'
 import beautyImg from '../assets/beauty.jpeg'
 import skinImg from '../assets/skin.jpeg'
 import toolsImg from '../assets/tools.jpeg'
-import { IMG } from '../data/assets'
 import { MotionSection } from '../components/ui/MotionSection'
 import { GlassCard } from '../components/ui/GlassCard'
 import { SectionHeading } from '../components/ui/SectionHeading'
@@ -26,8 +25,12 @@ export function Akeedh() {
           initial={{ scale: 1.02, opacity: 1 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.1, ease }}
-          className="absolute inset-0 min-h-full w-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${akeedhHero})` }}
+          className="absolute inset-0 min-h-full w-full bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: `url(${akeedh})`,
+            /* Slight shift from center — shows a bit more of the upper frame */
+            backgroundPosition: 'center 42%',
+          }}
         />
         <div className="absolute inset-0 min-h-full bg-gradient-to-b from-fuchsia-950/45 via-obsidian/82 to-obsidian" />
         <div className="absolute inset-0 min-h-full bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,rgba(244,63,94,0.14),transparent_58%)]" />

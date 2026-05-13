@@ -9,7 +9,6 @@ const defaultLinks = [
     href: 'https://www.linkedin.com/company/house-of-saffco/',
     icon: LinkedInIcon,
   },
-  { label: 'X', href: '#', icon: XIcon },
 ]
 
 function InstagramIcon({ className }) {
@@ -24,14 +23,6 @@ function LinkedInIcon({ className }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
       <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.67 4.8 6.13V23h-4v-6.35c0-1.52-.03-3.48-2.12-3.48-2.12 0-2.44 1.66-2.44 3.37V23h-4V8z" />
-    </svg>
-  )
-}
-
-function XIcon({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M18.244 2H21l-6.5 7.4L22 22h-6.56l-4.23-5.53L5.5 22H2.8l6.95-7.93L2 2h6.69l3.81 5.05L18.244 2zm-2.3 18h2.05L8.06 4H5.98l9.96 16z" />
     </svg>
   )
 }
