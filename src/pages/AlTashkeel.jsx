@@ -198,7 +198,7 @@ export function AlTashkeel() {
       {/* Hero: in-flow content only — no overflow-hidden, no nested scroll */}
       <section className="relative z-10 flex min-h-[82vh] flex-col justify-end px-5 pb-20 pt-28 md:min-h-[85vh] md:px-8 md:pb-24 lg:px-10 lg:pb-28">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 top-[35%] bg-gradient-to-b from-transparent via-obsidian/30 to-obsidian/85 md:top-[40%]" aria-hidden />
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-end">
+        <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-end -translate-y-25">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -211,7 +211,7 @@ export function AlTashkeel() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.06, ease }}
-            className="mt-5 max-w-4xl font-display text-4xl font-medium leading-tight text-white md:text-5xl lg:text-6xl"
+            className="mt-5 max-w-4xl font-body text-4xl font-medium leading-tight text-white md:text-5xl lg:text-6xl"
           >
             Al Tashkeel International LLC
           </motion.h1>
@@ -227,12 +227,6 @@ export function AlTashkeel() {
         </div>
       </section>
 
-      {/* Bridge: soft read fade into body sections */}
-      <div
-        className="relative z-10 -mt-1 h-24 shrink-0 bg-gradient-to-b from-obsidian/80 to-transparent md:h-28"
-        aria-hidden
-      />
-
       <MotionSection className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-4 pt-2 md:px-8 lg:px-10">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div>
@@ -240,6 +234,7 @@ export function AlTashkeel() {
               align="left"
               eyebrow="About"
               title="Corporate excellence with a Gulf soul."
+              titleClassName="font-body"
               subtitle="Headquartered in Mutrah, Al Tashkeel combines international standards of compliance and logistics with relationships built on trust, hospitality, and long-term stewardship."
             />
             <GlassCard className="mt-10" glow={false}>
@@ -263,16 +258,12 @@ export function AlTashkeel() {
         </div>
       </MotionSection>
 
-      <div
-        className="relative z-10 mx-auto mt-6 h-px w-full max-w-7xl bg-gradient-to-r from-transparent via-white/12 to-transparent px-5 md:px-8 lg:px-10"
-        aria-hidden
-      />
-
       <MotionSection className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-28 pt-12 md:px-8 md:pb-32 lg:px-10 lg:pb-36">
         <SectionHeading
           align="left"
           eyebrow="Network"
           title="Distribution depth, brand partnerships, and regional reach."
+          titleClassName="font-body"
           subtitle="Decades of relationships across suppliers, house brands, and major retail — with exports extending beyond the Gulf."
         />
 

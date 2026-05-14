@@ -39,7 +39,7 @@ export function Home() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.08, ease }}
-            className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-zinc-50 md:text-6xl lg:text-7xl"
+            className="mt-6 max-w-4xl font-body text-5xl font-medium leading-[1.05] tracking-tight text-zinc-50 md:text-6xl lg:text-7xl"
           >
             House of <span className="text-gradient-gold">Saffco</span>
           </motion.h1>
@@ -90,6 +90,7 @@ export function Home() {
         <SectionHeading
           eyebrow="Portfolio"
           title="The brand ecosystem"
+          titleClassName="font-body"
           subtitle="Three signature houses under one vision — each with a distinct voice, united by uncompromising quality."
         />
         <div className="grid gap-6 md:grid-cols-3">
@@ -129,7 +130,7 @@ export function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.35em] text-champagne">Distribution partner</p>
-              <h2 className="mt-4 font-display text-4xl font-medium text-zinc-50 md:text-5xl">
+              <h2 className="mt-4 font-body text-4xl font-medium text-zinc-50 md:text-5xl">
                 Al Tashkeel International LLC
               </h2>
               <p className="mt-2 text-sm uppercase tracking-widest text-zinc-500">Muscat, Sultanate of Oman</p>
@@ -163,6 +164,7 @@ export function Home() {
               align="left"
               eyebrow="Vision"
               title="Luxury is a language — we speak it fluently."
+              titleClassName="font-body"
               subtitle="From olfactive storytelling to dermatological rigor and seamless digital commerce, House of Satko defines a new standard for regional luxury houses with global ambition."
             />
             <div className="mt-10 grid gap-6 sm:grid-cols-2">

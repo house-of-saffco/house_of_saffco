@@ -32,7 +32,11 @@ export function Cura() {
             transition={{ duration: 0.7, ease }}
             className="max-w-3xl"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-cyan-700">Clinical luxury</p>
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-black/30 px-5 py-2 text-xs font-medium uppercase tracking-[0.35em] text-rose-200/90 backdrop-blur-xl">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-rose-400 shadow-[0_0_12px_#fb7185]" />
+              Brand under development
+            </div>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.4em] text-cyan-700">Clinical luxury</p>
             <h1 className="mt-5 font-display text-5xl font-medium tracking-tight text-zinc-950 md:text-6xl lg:text-7xl">
               Cura
             </h1>
@@ -60,6 +64,7 @@ export function Cura() {
           align="left"
           eyebrow="Innovation"
           title="Laboratory precision. Skin-level poetry."
+          titleClassName="font-body"
           subtitle="Every molecule earns its place — tested, traceable, and designed for the modern complexion under real environmental stress."
         />
         <div className="grid gap-6 lg:grid-cols-3">
@@ -114,7 +119,7 @@ export function Cura() {
             transition={{ duration: 0.6, ease }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/90">Atmosphere</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl">The glow of evidence.</h2>
+            <h2 className="mt-4 font-body text-4xl md:text-5xl">The glow of evidence</h2>
             <p className="mt-6 text-zinc-400">
               Cura translates complex dermatological insight into rituals you feel working — night after night,
               season after season.

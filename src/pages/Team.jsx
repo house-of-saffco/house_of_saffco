@@ -58,6 +58,7 @@ export function Team() {
         <SectionHeading
           eyebrow="People"
           title="Leadership with quiet confidence."
+          titleClassName="font-body"
           subtitle="A multidisciplinary team guiding brand equity, operations, and creative direction across the House of Saffco ecosystem."
         />
         <div className="mx-auto grid max-w-6xl grid-cols-3 gap-4 md:gap-6">

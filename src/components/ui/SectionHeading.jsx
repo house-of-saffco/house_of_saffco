@@ -6,6 +6,7 @@ export function SectionHeading({
   subtitle,
   align = 'center',
   light = false,
+  titleClassName = 'font-display',
 }) {
   const alignClass =
     align === 'left' ? 'text-left items-start' : 'text-center items-center'
@@ -28,7 +29,7 @@ export function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.05 }}
-        className={`font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl ${light ? 'text-zinc-900' : 'text-zinc-50'}`}
+        className={`${titleClassName} text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl ${light ? 'text-zinc-900' : 'text-zinc-50'}`}
       >
         {title}
       </motion.h2>
