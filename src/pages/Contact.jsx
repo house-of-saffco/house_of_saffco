@@ -140,7 +140,7 @@ export function Contact() {
                 Sultanate of Oman
               </p>
               <a href="tel:+96800000000" className="mt-4 block text-sm text-champagne hover:opacity-80">
-                +968 0000 0000
+                +96896964463
               </a>
               <a
                 href="mailto:management@houseofsaffco.com"

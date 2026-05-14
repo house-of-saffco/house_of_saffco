@@ -18,29 +18,30 @@ const tiles = [
 
 export function Akeedh() {
   return (
-    <div className="relative isolate w-full flex flex-col bg-obsidian">
-      {/* Full-route cinematic stack — min-h-full tracks page height; z-0 keeps art above shell bg */}
-      <div className="pointer-events-none absolute inset-0 z-0 min-h-full w-full" aria-hidden>
-        <motion.div
-          initial={{ scale: 1.02, opacity: 1 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.1, ease }}
-          className="absolute inset-0 min-h-full w-full bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: `url(${akeedh})`,
-            /* Slight shift from center — shows a bit more of the upper frame */
-            backgroundPosition: 'center 42%',
-          }}
-        />
-        <div className="absolute inset-0 min-h-full bg-gradient-to-b from-fuchsia-950/45 via-obsidian/82 to-obsidian" />
-        <div className="absolute inset-0 min-h-full bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,rgba(244,63,94,0.14),transparent_58%)]" />
-        <div className="absolute inset-0 min-h-full bg-[radial-gradient(ellipse_at_100%_100%,rgba(251,113,133,0.08),transparent_45%)]" />
-        <div className="noise-overlay absolute inset-0 min-h-full opacity-[0.14]" />
-      </div>
+    <div className="relative isolate flex w-full flex-col bg-obsidian">
+      <section className="relative z-10 mx-auto w-full max-w-[2048px] overflow-hidden">
+        <div className="relative aspect-[2048/1365] w-full">
+          <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
+            <motion.div
+              initial={{ scale: 1.02, opacity: 1 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.1, ease }}
+              className="absolute inset-0 bg-cover bg-no-repeat"
+              style={{
+                backgroundImage: `url(${akeedh})`,
+                backgroundPosition: 'center 42%',
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-950/45 via-obsidian/82 to-obsidian" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,rgba(244,63,94,0.14),transparent_58%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,rgba(251,113,133,0.08),transparent_45%)]" />
+            <div className="noise-overlay absolute inset-0 opacity-[0.14]" />
+          </div>
 
-      <section className="relative z-10 mx-auto w-full max-w-7xl px-5 py-28 md:px-8 md:py-32 lg:px-10 lg:py-36">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-b from-transparent to-obsidian/50 md:top-[45%]" aria-hidden />
-        <div className="relative grid items-end gap-12 lg:grid-cols-12">
+          <div className="absolute inset-x-0 bottom-[30%] z-10">
+            <div className="relative mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-10">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-b from-transparent to-obsidian/50 md:top-[45%]" aria-hidden />
+              <div className="relative grid items-end gap-12 lg:grid-cols-12">
           <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, y: 28 }}
@@ -77,6 +78,9 @@ export function Akeedh() {
               </div>
             </GlassCard>
           </motion.div> */}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

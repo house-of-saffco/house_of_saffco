@@ -12,9 +12,7 @@ const ease = [0.22, 1, 0.36, 1]
 const team = [
   { name: 'Syed Abbas', role: 'Chairman', seed: 'Al Tashkeel International LLC group of companies', photo: photoAbbas },
   { name: 'Faizur Rahaman Abbas', role: 'Chief Executive Officer', seed: 'House of Saffco', photo: photoFaizur },
-  { name: 'Mohammed Fahim Badusha', role: 'Director Of Operations', seed: 'House of Saffco', photo: photoFahim },
-  { name: 'Abdul Samad Abbas', role: 'Chief Financial Officer', seed: 'House of Saffco' },
-  { name: 'Syed Arshaad', role: 'IT Manager', seed: 'House of Saffco' },
+  { name: 'Mohammed Fahim Badusha', role: 'Director Of Operations', seed: 'House of Saffco', photo: photoFahim }
 ]
 
 function MemberCard({ member, index }) {
@@ -26,19 +24,19 @@ function MemberCard({ member, index }) {
       viewport={{ once: true, margin: '-5%' }}
       transition={{ duration: 0.5, delay: index * 0.06, ease }}
       whileHover={{ y: -4 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-colors hover:border-champagne/25 md:p-6"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-xl transition-colors hover:border-champagne/25 md:p-5"
     >
       <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-champagne/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" aria-hidden />
-      <div className="relative w-full overflow-hidden rounded-xl border border-white/10 ring-1 ring-white/5">
+      <div className="relative mx-auto w-full max-w-[200px] overflow-hidden rounded-xl border border-white/10 ring-1 ring-white/5 md:max-w-[220px]">
         <img
           src={photo}
           alt=""
-          className="aspect-[3/4] w-full object-cover object-[center_18%] md:aspect-[4/5] md:min-h-[280px] md:max-h-[360px]"
+          className="aspect-[3/4] w-full object-cover object-[center_18%]"
         />
       </div>
-      <h3 className="mt-5 text-center font-display text-xl text-zinc-50 md:text-2xl">{name}</h3>
-      <p className="mt-1 text-center text-sm text-zinc-400">{role}</p>
-      <p className="mt-3 text-center text-xs leading-relaxed text-zinc-500 md:text-sm">{seed}</p>
+      <h3 className="mt-4 text-center font-display text-lg text-zinc-50 md:text-xl">{name}</h3>
+      <p className="mt-1 text-center text-xs text-zinc-400 md:text-sm">{role}</p>
+      <p className="mt-2 text-center text-[11px] leading-relaxed text-zinc-500 md:text-xs">{seed}</p>
     </motion.article>
   )
 }
@@ -62,7 +60,7 @@ export function Team() {
           title="Leadership with quiet confidence."
           subtitle="A multidisciplinary team guiding brand equity, operations, and creative direction across the House of Saffco ecosystem."
         />
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-5 md:gap-8">
+        <div className="mx-auto grid max-w-6xl grid-cols-3 gap-4 md:gap-6">
           {team.map((m, i) => (
             <MemberCard key={m.name} member={m} index={i} />
           ))}

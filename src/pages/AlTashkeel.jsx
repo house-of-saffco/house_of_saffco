@@ -28,7 +28,6 @@ import indiaFlag from '../assets/flag/india.jpeg'
 import bahrainFlag from '../assets/flag/bahrain.webp'
 import kuwaitFlag from '../assets/flag/kuwait.jpeg'
 import qatarFlag from '../assets/flag/qatar.jpeg'
-import omanFlag from '../assets/flag/oman.webp'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -71,7 +70,6 @@ const exportRegionFlags = [
   { src: bahrainFlag, alt: 'Bahrain' },
   { src: kuwaitFlag, alt: 'Kuwait' },
   { src: qatarFlag, alt: 'Qatar' },
-  { src: omanFlag, alt: 'Oman' },
 ]
 
 function PartnerChips({ items }) {
