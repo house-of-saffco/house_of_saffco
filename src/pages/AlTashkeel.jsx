@@ -18,6 +18,7 @@ import luluLogo from '../assets/logos/lulu.svg'
 import lotLuluLogo from '../assets/logos/lot-lulu.jpg'
 import nestoLogo from '../assets/logos/nesto-logo.svg'
 import malmartLogo from '../assets/logos/Malmart-Logo.png'
+import omanImage from '../assets/oman.jpeg'
 import alQabayelLogo from '../assets/logos/al_kabayel.svg'
 import efmLogo from '../assets/logos/Emirates-flower-market.webp'
 import alTamamLogo from '../assets/logos/altamam.webp'
@@ -258,7 +259,7 @@ export function AlTashkeel() {
             transition={{ duration: 0.65, ease }}
             className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40"
           >
-            <img src={IMG.corporate} alt="" className="aspect-[4/3] w-full object-cover md:aspect-auto md:h-full md:min-h-[440px]" />
+            <img src={omanImage} alt="" className="aspect-[4/3] w-full object-cover md:aspect-auto md:h-full md:min-h-[440px]" />
             <div className="absolute inset-0 bg-gradient-to-tr from-obsidian/80 via-transparent to-transparent" />
           </motion.div>
         </div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import curaHero from '../assets/cura-hero.jpeg'
+import curaHero from '../assets/cura.png'
 import curaLab from '../assets/cura-lab.jpeg'
 import { IMG } from '../data/assets'
 import { MotionSection } from '../components/ui/MotionSection'
@@ -14,7 +14,11 @@ export function Cura() {
       {/* Hero — light + clinical */}
       <section className="relative overflow-hidden border-b border-zinc-200/80">
         <div className="absolute inset-0">
-          <img src={curaHero} alt="" className="h-full w-full object-cover" />
+          <img
+            src={curaHero}
+            alt=""
+            className="w-full h-full object-cover object-bottom"
+          />
           {/* ~50% photo visibility: light clinical veil, not a near-opaque white wash */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/38 via-white/32 to-zinc-100/55" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_0%,rgba(56,189,248,0.1),transparent_52%)]" />

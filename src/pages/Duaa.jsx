@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import duaHero from '../assets/dua-hero.jpeg'
+import duaHero from '../assets/duaa.png'
 import { IMG } from '../data/assets'
 import { MotionSection } from '../components/ui/MotionSection'
 import { GlassCard } from '../components/ui/GlassCard'
@@ -16,19 +16,12 @@ export function Duaa() {
           initial={{ scale: 1.06, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.4, ease }}
-          className="absolute inset-0 min-h-full w-full bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 min-h-full w-full bg-cover bg-[left_30%_center] bg-no-repeat brightness-[1.12]"
           style={{ backgroundImage: `url(${duaHero})` }}
         />
-        <motion.div
-          initial={{ scale: 1.04, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.6, delay: 0.12, ease }}
-          className="absolute inset-0 min-h-full w-full bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen blur-3xl"
-          style={{ backgroundImage: `url(${duaHero})` }}
-        />
-        <div className="absolute inset-0 min-h-full bg-gradient-to-b from-obsidian/25 via-obsidian/82 to-obsidian" />
+        <div className="absolute inset-0 min-h-full bg-gradient-to-b from-obsidian/18 via-obsidian/57 to-obsidian/92" />
         <div className="absolute inset-0 min-h-full bg-[radial-gradient(circle_at_30%_18%,rgba(244,114,182,0.14),transparent_48%)]" />
-        <div className="noise-overlay absolute inset-0 min-h-full opacity-60" />
+        <div className="noise-overlay absolute inset-0 min-h-full opacity-[0.5]" />
       </div>
 
       <section className="relative z-10 flex min-h-[88vh] flex-col justify-end px-5 pb-20 pt-28 md:px-8 lg:px-10 lg:pb-28">
@@ -57,7 +50,7 @@ export function Duaa() {
         </motion.div>
       </section>
 
-      <MotionSection className="relative z-10 mx-auto w-full max-w-5xl px-5 py-20 md:px-8 lg:px-10">
+      {/* <MotionSection className="relative z-10 mx-auto w-full max-w-5xl px-5 py-20 md:px-8 lg:px-10">
         <div className="grid gap-8 md:grid-cols-2">
           <GlassCard className="min-h-[280px] !p-0 overflow-hidden md:min-h-[320px]">
             <img src={IMG.fragranceAlt} alt="" className="h-full w-full object-cover opacity-80" />
@@ -76,7 +69,7 @@ export function Duaa() {
             </p>
           </div>
         </div>
-      </MotionSection>
+      </MotionSection> */}
 
     </div>
   )
