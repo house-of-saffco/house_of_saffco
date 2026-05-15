@@ -37,7 +37,7 @@ export function Cura() {
               Brand under development
             </div>
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.4em] text-cyan-700">Clinical luxury</p>
-            <h1 className="mt-5 font-display text-5xl font-medium tracking-tight text-zinc-950 md:text-6xl lg:text-7xl">
+            <h1 className="mt-5 font-body text-5xl font-medium tracking-tight text-zinc-950 md:text-6xl lg:text-7xl">
               Cura
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-zinc-600 md:text-2xl">
@@ -89,7 +89,7 @@ export function Cura() {
                 <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500/20 to-zinc-900/5 ring-1 ring-cyan-500/30">
                   <span className="text-lg text-cyan-700">◇</span>
                 </div>
-                <h3 className="font-display text-2xl text-zinc-950">{t}</h3>
+                <h3 className="font-body text-2xl font-medium text-zinc-950">{t}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-zinc-600">{d}</p>
               </GlassCard>
             </motion.div>

@@ -22,7 +22,7 @@ export function BrandShowcaseCard({
           aria-hidden
         />
         <div className="absolute bottom-4 left-4 right-4">
-          <p className="font-display text-2xl text-white md:text-3xl">{name}</p>
+          <p className="font-body text-2xl font-medium text-white md:text-3xl">{name}</p>
           <p className="mt-1 text-sm text-zinc-300">{tagline}</p>
         </div>
       </div>

@@ -41,7 +41,7 @@ export function Home() {
             transition={{ duration: 0.75, delay: 0.08, ease }}
             className="mt-6 max-w-4xl font-body text-5xl font-medium leading-[1.05] tracking-tight text-zinc-50 md:text-6xl lg:text-7xl"
           >
-            House of <span className="text-gradient-gold">Saffco</span>
+            House of Saffco
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -173,7 +173,7 @@ export function Home() {
                 { title: 'Measured growth', body: 'Selective partnerships that protect equity and desirability.' },
               ].map(({ title, body }) => (
                 <GlassCard key={title} className="!p-6" hover glow={false}>
-                  <h3 className="font-display text-xl text-zinc-100">{title}</h3>
+                  <h3 className="font-body text-xl font-medium text-zinc-100">{title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-zinc-500">{body}</p>
                 </GlassCard>
               ))}

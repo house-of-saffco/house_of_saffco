@@ -6,7 +6,7 @@ export function SectionHeading({
   subtitle,
   align = 'center',
   light = false,
-  titleClassName = 'font-display',
+  titleClassName = 'font-body',
 }) {
   const alignClass =
     align === 'left' ? 'text-left items-start' : 'text-center items-center'

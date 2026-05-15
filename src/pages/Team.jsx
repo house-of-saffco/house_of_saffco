@@ -34,7 +34,7 @@ function MemberCard({ member, index }) {
           className="aspect-[3/4] w-full object-cover object-[center_18%]"
         />
       </div>
-      <h3 className="mt-4 text-center font-display text-lg text-zinc-50 md:text-xl">{name}</h3>
+      <h3 className="mt-4 text-center font-body text-lg font-medium text-zinc-50 md:text-xl">{name}</h3>
       <p className="mt-1 text-center text-xs text-zinc-400 md:text-sm">{role}</p>
       <p className="mt-2 text-center text-[11px] leading-relaxed text-zinc-500 md:text-xs">{seed}</p>
     </motion.article>

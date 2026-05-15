@@ -18,8 +18,11 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-5 py-16 md:px-8 lg:px-10">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link to="/" className="font-display text-2xl font-medium tracking-[0.1em] text-zinc-100">
-              House of <span className="text-gradient-gold">Saffco</span>
+            <Link
+              to="/"
+              className="text-xs font-medium uppercase tracking-[0.45em] text-champagne"
+            >
+              House of Saffco
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-zinc-500">
               A curated ecosystem of luxury fragrance, science-led skincare, and premium beauty commerce —

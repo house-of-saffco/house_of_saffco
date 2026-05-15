@@ -44,7 +44,7 @@ export function Akeedh() {
             transition={{ duration: 0.7, ease }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-fuchsia-300/90">E-commerce</p>
-            <h1 className="mt-4 font-display text-5xl font-medium tracking-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="mt-4 font-body text-5xl font-medium tracking-tight text-white md:text-6xl lg:text-7xl">
               Akeedh
             </h1>
             <p className="mt-6 max-w-xl text-xl leading-relaxed text-zinc-300">
@@ -60,7 +60,7 @@ export function Akeedh() {
           <MotionSection className="mt-[80px] pb-28 md:pb-32 lg:pb-36">
             <SectionHeading
               eyebrow="Assortment"
-              title="Fashion meets function in the beauty aisle."
+              title="Fashion meets function in the beauty aisle"
               titleClassName="font-body"
               subtitle="Soft gradients, tactile photography, and category storytelling designed for premium conversion."
             />
@@ -83,7 +83,7 @@ export function Akeedh() {
                       <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent opacity-90 transition-opacity group-hover:opacity-95" />
                       <div className="absolute bottom-0 left-0 right-0 p-6">
                         <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-200/90">{meta}</p>
-                        <h3 className="mt-2 font-display text-2xl text-white">{title}</h3>
+                        <h3 className="mt-2 font-body text-2xl font-medium text-white">{title}</h3>
                       </div>
                     </div>
                   </GlassCard>

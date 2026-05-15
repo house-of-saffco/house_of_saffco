@@ -35,10 +35,10 @@ export function Duaa() {
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-rose-400 shadow-[0_0_12px_#fb7185]" />
             Brand under development
           </div>
-          <h1 className="mt-8 font-display text-6xl font-medium tracking-tight text-white md:text-7xl lg:text-8xl">
+          <h1 className="mt-8 font-body text-6xl font-medium tracking-tight text-white md:text-7xl lg:text-8xl">
             Duaa
           </h1>
-          <p className="mt-6 max-w-2xl font-display text-2xl italic leading-snug text-zinc-300 md:text-3xl">
+          <p className="mt-6 max-w-2xl font-body text-2xl leading-snug text-zinc-300 md:text-3xl">
             A fragrance house focused on refined, everyday luxury.
           </p>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-zinc-500 md:text-lg">

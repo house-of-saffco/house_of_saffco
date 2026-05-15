@@ -5,8 +5,8 @@
 
 import { resolve } from 'node:path'
 import dotenv from 'dotenv'
-import { Ratelimit } from '@upstash/ratelimit'
-import { Redis } from '@upstash/redis'
+// import { Ratelimit } from '@upstash/ratelimit'
+// import { Redis } from '@upstash/redis'
 import { Resend } from 'resend'
 import validator from 'validator'
 
@@ -25,51 +25,52 @@ const MESSAGE_MIN = 10
 const MESSAGE_MAX = 1000
 const MAX_BODY_BYTES = 32 * 1024
 
-/** In-process fallback when Upstash is not configured (local dev only). */
-const memoryHits = new Map()
-
-let ratelimitSingleton = null
-
-function getDistributedRatelimit() {
-  const url = process.env.UPSTASH_REDIS_REST_URL
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN
-  if (!url || !token) return null
-  if (!ratelimitSingleton) {
-    const redis = new Redis({ url, token })
-    ratelimitSingleton = new Ratelimit({
-      redis,
-      limiter: Ratelimit.slidingWindow(5, '60 s'),
-      prefix: '@contact',
-    })
-  }
-  return ratelimitSingleton
-}
-
-function getClientIp(req) {
-  const xf = req.headers['x-forwarded-for']
-  if (typeof xf === 'string' && xf.length > 0) {
-    return xf.split(',')[0].trim().slice(0, 64) || 'unknown'
-  }
-  const real = req.headers['x-real-ip']
-  if (typeof real === 'string' && real.length > 0) return real.trim().slice(0, 64)
-  return 'unknown'
-}
-
-function memoryRateLimit(ip) {
-  const now = Date.now()
-  const windowMs = 60_000
-  let hits = memoryHits.get(ip) || []
-  hits = hits.filter((t) => now - t < windowMs)
-  if (hits.length >= 5) return false
-  hits.push(now)
-  memoryHits.set(ip, hits)
-  if (memoryHits.size > 5000) {
-    for (const [k, v] of memoryHits) {
-      if (v.every((t) => now - t >= windowMs)) memoryHits.delete(k)
-    }
-  }
-  return true
-}
+// Rate limiting disabled temporarily — re-enable when Upstash is on Vercel.
+// /** In-process fallback when Upstash is not configured (local dev only). */
+// const memoryHits = new Map()
+//
+// let ratelimitSingleton = null
+//
+// function getDistributedRatelimit() {
+//   const url = process.env.UPSTASH_REDIS_REST_URL
+//   const token = process.env.UPSTASH_REDIS_REST_TOKEN
+//   if (!url || !token) return null
+//   if (!ratelimitSingleton) {
+//     const redis = new Redis({ url, token })
+//     ratelimitSingleton = new Ratelimit({
+//       redis,
+//       limiter: Ratelimit.slidingWindow(5, '60 s'),
+//       prefix: '@contact',
+//     })
+//   }
+//   return ratelimitSingleton
+// }
+//
+// function getClientIp(req) {
+//   const xf = req.headers['x-forwarded-for']
+//   if (typeof xf === 'string' && xf.length > 0) {
+//     return xf.split(',')[0].trim().slice(0, 64) || 'unknown'
+//   }
+//   const real = req.headers['x-real-ip']
+//   if (typeof real === 'string' && real.length > 0) return real.trim().slice(0, 64)
+//   return 'unknown'
+// }
+//
+// function memoryRateLimit(ip) {
+//   const now = Date.now()
+//   const windowMs = 60_000
+//   let hits = memoryHits.get(ip) || []
+//   hits = hits.filter((t) => now - t < windowMs)
+//   if (hits.length >= 5) return false
+//   hits.push(now)
+//   memoryHits.set(ip, hits)
+//   if (memoryHits.size > 5000) {
+//     for (const [k, v] of memoryHits) {
+//       if (v.every((t) => now - t >= windowMs)) memoryHits.delete(k)
+//     }
+//   }
+//   return true
+// }
 
 async function parseJsonBody(req) {
   if (req.body && typeof req.body === 'object' && !Buffer.isBuffer(req.body)) {
@@ -155,36 +156,34 @@ export default async function handler(req, res) {
     return
   }
 
-  const isProd =
-    process.env.VERCEL_ENV === 'production' || process.env.NODE_ENV === 'production'
-
   if (!process.env.RESEND_API_KEY) {
     console.error('RESEND_API_KEY is not set')
     safeJsonResponse(res, 503, { error: 'Email service is not configured.' })
     return
   }
 
-  const ip = getClientIp(req)
-
-  const distributed = getDistributedRatelimit()
-  if (distributed) {
-    const { success } = await distributed.limit(ip)
-    if (!success) {
-      safeJsonResponse(res, 429, { error: 'Too many requests. Please try again in a minute.' })
-      return
-    }
-  } else {
-    if (isProd) {
-      safeJsonResponse(res, 503, {
-        error: 'Rate limiting is not configured. Set Upstash Redis environment variables.',
-      })
-      return
-    }
-    if (!memoryRateLimit(ip)) {
-      safeJsonResponse(res, 429, { error: 'Too many requests. Please try again in a minute.' })
-      return
-    }
-  }
+  // const isProd =
+  //   process.env.VERCEL_ENV === 'production' || process.env.NODE_ENV === 'production'
+  // const ip = getClientIp(req)
+  // const distributed = getDistributedRatelimit()
+  // if (distributed) {
+  //   const { success } = await distributed.limit(ip)
+  //   if (!success) {
+  //     safeJsonResponse(res, 429, { error: 'Too many requests. Please try again in a minute.' })
+  //     return
+  //   }
+  // } else {
+  //   if (isProd) {
+  //     safeJsonResponse(res, 503, {
+  //       error: 'Rate limiting is not configured. Set Upstash Redis environment variables.',
+  //     })
+  //     return
+  //   }
+  //   if (!memoryRateLimit(ip)) {
+  //     safeJsonResponse(res, 429, { error: 'Too many requests. Please try again in a minute.' })
+  //     return
+  //   }
+  // }
 
   let body
   try {

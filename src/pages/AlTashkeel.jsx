@@ -160,7 +160,7 @@ function NetworkCard({ eyebrow, title, items, logoItems, flagItems, showAndMore 
     >
       <GlassCard className="h-full" glow={false}>
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-champagne">{eyebrow}</p>
-        <h3 className="mt-3 font-display text-xl text-zinc-100 md:text-2xl">{title}</h3>
+        <h3 className="mt-3 font-body text-xl font-medium text-zinc-100 md:text-2xl">{title}</h3>
         {flagItems ? (
           <PartnerFlagChips items={flagItems} />
         ) : logoItems ? (
@@ -281,7 +281,7 @@ export function AlTashkeel() {
                 A long-standing footprint in trade and distribution, built on consistency and scale.
               </p>
             </div>
-            <div className="flex shrink-0 items-baseline gap-1 font-display text-5xl font-medium tracking-tight text-white md:text-6xl lg:text-7xl">
+            <div className="flex shrink-0 items-baseline gap-1 font-body text-5xl font-medium tracking-tight text-white md:text-6xl lg:text-7xl">
               <span>35</span>
               <span className="text-champagne">+</span>
             </div>
