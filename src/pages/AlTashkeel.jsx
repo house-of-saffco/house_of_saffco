@@ -17,7 +17,6 @@ import luluLogo from '../assets/logos/lulu.svg'
 import lotLuluLogo from '../assets/logos/lot-lulu.jpg'
 import nestoLogo from '../assets/logos/nesto-logo.svg'
 import malmartLogo from '../assets/logos/Malmart-Logo.png'
-import omanImage from '../assets/oman.jpeg'
 import alQabayelLogo from '../assets/logos/al_qabayel.jpg'
 import efmLogo from '../assets/logos/Emirates-flower-market.webp'
 import alTamamLogo from '../assets/logos/altamam.webp'
@@ -28,15 +27,20 @@ import bahrainFlag from '../assets/flag/bahrain.webp'
 import kuwaitFlag from '../assets/flag/kuwait.jpeg'
 import qatarFlag from '../assets/flag/qatar.jpeg'
 import saudiFlag from '../assets/flag/saudi.png'
+import rdlLogo from '../assets/logos/rdl.webp'
+import trbLogo from '../assets/logos/trb.webp'
+import florenLogo from '../assets/logos/floren.jpeg'
+import gulfGasLogo from '../assets/logos/gulf-gas.jpeg'
+import tashkeelHero from '../assets/tashkeel.webp'
+import alTashkeelHeroBg from '../assets/al-tashkeel.png'
 
 const ease = [0.22, 1, 0.36, 1]
 
 const distributionPartners = [
-  'RDL',
-  'DC Apple',
-  'TRB (The Rare Blend)',
-  'Floren',
-  'Gulf Gas Butane Cartridge',
+  { src: rdlLogo, alt: 'RDL' },
+  { src: trbLogo, alt: 'TRB (The Rare Blend)' },
+  { src: florenLogo, alt: 'Floren' },
+  { src: gulfGasLogo, alt: 'Gulf Gas Butane Cartridge' },
 ]
 
 const brandSupplierLogos = [
@@ -72,21 +76,6 @@ const exportRegionFlags = [
   { src: qatarFlag, alt: 'Qatar' },
   { src: saudiFlag, alt: 'Saudi Arabia' },
 ]
-
-function PartnerChips({ items }) {
-  return (
-    <ul className="mt-5 flex flex-wrap gap-2">
-      {items.map((label) => (
-        <li
-          key={label}
-          className="rounded-full border border-white/10 bg-black/25 px-3 py-1.5 text-xs leading-snug text-zinc-300"
-        >
-          {label}
-        </li>
-      ))}
-    </ul>
-  )
-}
 
 function PartnerLogoChips({ items, showAndMore = false }) {
   const chipClass =
@@ -149,7 +138,7 @@ function PartnerFlagChips({ items }) {
   )
 }
 
-function NetworkCard({ eyebrow, title, items, logoItems, flagItems, showAndMore = false, delay = 0 }) {
+function NetworkCard({ eyebrow, title, logoItems, flagItems, showAndMore = false, delay = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 22 }}
@@ -162,10 +151,8 @@ function NetworkCard({ eyebrow, title, items, logoItems, flagItems, showAndMore 
         <h3 className="mt-3 font-body text-xl font-medium text-zinc-100 md:text-2xl">{title}</h3>
         {flagItems ? (
           <PartnerFlagChips items={flagItems} />
-        ) : logoItems ? (
-          <PartnerLogoChips items={logoItems} showAndMore={showAndMore} />
         ) : (
-          <PartnerChips items={items} />
+          <PartnerLogoChips items={logoItems} showAndMore={showAndMore} />
         )}
       </GlassCard>
     </motion.div>
@@ -176,12 +163,22 @@ export function AlTashkeel() {
   return (
     <div className="relative isolate w-full flex flex-col bg-obsidian">
       {/* Hero */}
-      <section className="relative z-10 flex min-h-[82vh] flex-col justify-end border-b border-white/5 px-5 pb-20 pt-28 md:min-h-[85vh] md:px-8 md:pb-24 lg:px-10 lg:pb-28">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_0%,rgba(201,169,98,0.12),transparent_55%)]"
-          aria-hidden
-        />
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-end -translate-y-25">
+      <section className="relative isolate z-10 flex min-h-[82vh] flex-col justify-end overflow-hidden border-b border-white/5 px-5 pb-20 pt-28 md:min-h-[85vh] md:px-8 md:pb-24 lg:px-10 lg:pb-28">
+        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
+          <motion.img
+            src={alTashkeelHeroBg}
+            alt=""
+            initial={{ scale: 1.02, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.4, ease }}
+            className="absolute left-1/2 top-1/2 z-0 h-auto max-h-[min(70vh,88%)] w-auto max-w-[min(88vw,720px)] -translate-x-1/2 -translate-y-1/2 object-contain object-center brightness-[1.05] md:max-h-[min(76vh,90%)] md:max-w-[min(80vw,860px)] lg:max-w-[min(72vw,960px)]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-obsidian/18 via-obsidian/57 to-obsidian/92" />
+          <div className="absolute inset-0 bg-gradient-to-r from-obsidian/75 via-obsidian/40 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_0%,rgba(201,169,98,0.12),transparent_55%)]" />
+          <div className="noise-overlay absolute inset-0 opacity-[0.45]" />
+        </div>
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-end -translate-y-25">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -235,7 +232,7 @@ export function AlTashkeel() {
             transition={{ duration: 0.65, ease }}
             className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40"
           >
-            <img src={omanImage} alt="" className="aspect-[4/3] w-full object-cover md:aspect-auto md:h-full md:min-h-[440px]" />
+            <img src={tashkeelHero} alt="" className="aspect-[4/3] w-full object-cover md:aspect-auto md:h-full md:min-h-[440px]" />
             <div className="absolute inset-0 bg-gradient-to-tr from-obsidian/80 via-transparent to-transparent" />
           </motion.div>
         </div>
@@ -277,7 +274,7 @@ export function AlTashkeel() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:gap-8">
           <NetworkCard
             eyebrow="Distributors of"
-            items={distributionPartners}
+            logoItems={distributionPartners}
             delay={0}
           />
           <NetworkCard
