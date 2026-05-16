@@ -136,7 +136,7 @@ export function Home() {
               </h2>
               <p className="mt-2 text-sm uppercase tracking-widest text-zinc-500">Muscat, Sultanate of Oman</p>
               <p className="mt-8 text-lg leading-relaxed text-zinc-400">
-                Strategic reach across the Gulf and beyond ensuring each House of Satko brand arrives with the
+                Strategic reach across the Gulf and beyond ensuring each House of Saffco brand arrives with the
                 integrity, timing, and presentation it deserves.
               </p>
               <Link
@@ -172,7 +172,7 @@ export function Home() {
                 </>
               }
               titleClassName="font-body"
-              subtitle="From olfactive storytelling to dermatological rigor and seamless digital commerce, House of Satko defines a new standard for regional luxury houses with global ambition."
+              subtitle="From olfactive storytelling to dermatological rigor and seamless digital commerce, House of Saffco defines a new standard for regional luxury houses with global ambition."
             />
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {[

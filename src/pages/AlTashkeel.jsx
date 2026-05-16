@@ -119,10 +119,8 @@ function PartnerLogoChips({ items, showAndMore = false }) {
         )
       })}
       {showAndMore && (
-        <li className={chipClass}>
-          <div className="flex w-full min-w-0 flex-1 items-center justify-center rounded-lg border border-dashed border-white/15 bg-black/20 px-3 py-2">
-            <span className="text-xs font-medium tracking-wide text-zinc-400">and more</span>
-          </div>
+        <li className="flex w-full basis-full items-center justify-center py-1 sm:basis-auto sm:w-auto">
+          <span className="text-xs font-medium tracking-wide text-zinc-400">and more</span>
         </li>
       )}
     </ul>

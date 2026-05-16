@@ -37,9 +37,9 @@ export function Akeedh() {
           <div className="noise-overlay absolute inset-0 opacity-[0.14]" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-[18%] md:px-8 lg:px-10">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-28 md:px-8 md:pt-[18%] lg:px-10">
           <motion.div
-            className="max-w-3xl -translate-y-24"
+            className="max-w-3xl md:-translate-y-24"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease }}
