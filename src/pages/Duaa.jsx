@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import duaHero from '../assets/duaa.png'
 import duaaLogo from '../assets/logos/duaa-logo.png'
 import duaTeaser from '../assets/dua-teaser.mp4'
@@ -8,12 +8,40 @@ import { GlassCard } from '../components/ui/GlassCard'
 
 const ease = [0.22, 1, 0.36, 1]
 
+const TEASER_LOADER_MIN_MS = 2000
+
 export function Duaa() {
   const teaserRef = useRef(null)
+  const [teaserLoading, setTeaserLoading] = useState(true)
 
   useEffect(() => {
     const video = teaserRef.current
     if (!video) return
+
+    let minDelayDone = false
+    let videoReady = false
+
+    const hideLoader = () => {
+      if (minDelayDone && videoReady) setTeaserLoading(false)
+    }
+
+    const minTimer = window.setTimeout(() => {
+      minDelayDone = true
+      hideLoader()
+    }, TEASER_LOADER_MIN_MS)
+
+    const markReady = () => {
+      videoReady = true
+      hideLoader()
+    }
+
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      markReady()
+    } else {
+      video.addEventListener('canplay', markReady, { once: true })
+    }
+
+    video.addEventListener('error', () => setTeaserLoading(false), { once: true })
 
     const playMuted = () => {
       video.muted = true
@@ -30,7 +58,11 @@ export function Duaa() {
       { threshold: 0.2 }
     )
     observer.observe(video)
-    return () => observer.disconnect()
+
+    return () => {
+      window.clearTimeout(minTimer)
+      video.removeEventListener('canplay', markReady)
+    }
   }, [])
 
   return (
@@ -82,7 +114,7 @@ export function Duaa() {
 
       <MotionSection className="relative z-10 mx-auto w-full max-w-5xl border-t border-white/5 bg-obsidian px-5 py-20 md:px-8 lg:px-10">
         <div className="grid gap-8 md:grid-cols-2">
-          <GlassCard className="min-h-[280px] !p-0 overflow-hidden md:min-h-[320px]">
+          <GlassCard className="relative min-h-[280px] !p-0 overflow-hidden md:min-h-[320px]">
             <video
               ref={teaserRef}
               src={duaTeaser}
@@ -91,11 +123,33 @@ export function Duaa() {
               autoPlay
               loop
               preload="auto"
-              className="h-full w-full object-cover opacity-80"
+              className={`h-full w-full object-cover transition-opacity duration-500 ${
+                teaserLoading ? 'opacity-0' : 'opacity-80'
+              }`}
               aria-label="Duaa brand teaser"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
+            <AnimatePresence>
+              {teaserLoading && (
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.45, ease }}
+                  className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-4 bg-obsidian/90 backdrop-blur-sm"
+                  aria-live="polite"
+                  aria-busy="true"
+                >
+                  <div
+                    className="h-10 w-10 animate-spin rounded-full border-2 border-rose-400/25 border-t-rose-400 shadow-[0_0_16px_rgba(251,113,133,0.35)]"
+                    aria-hidden
+                  />
+                  <p className="text-xs font-medium uppercase tracking-[0.35em] text-rose-300/90">
+                    Loading film
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-obsidian via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 z-10">
               <p className="text-xs uppercase tracking-[0.3em] text-rose-300">Editorial</p>
               <p className="mt-2 font-display text-2xl text-white">The art of proximity</p>
             </div>
