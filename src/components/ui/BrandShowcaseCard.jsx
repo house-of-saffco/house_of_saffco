@@ -8,6 +8,7 @@ export function BrandShowcaseCard({
   tagline,
   image,
   accent = 'from-amber-500/20 to-transparent',
+  bottomScrim = false,
 }) {
   const inner = (
     <>
@@ -21,7 +22,13 @@ export function BrandShowcaseCard({
           className={`absolute inset-0 bg-gradient-to-t ${accent} to-zinc-950/90`}
           aria-hidden
         />
-        <div className="absolute bottom-4 left-4 right-4">
+        {bottomScrim && (
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 via-45% to-transparent to-75%"
+            aria-hidden
+          />
+        )}
+        <div className="absolute bottom-4 left-4 right-4 z-10">
           <p className="font-body text-2xl font-medium text-white md:text-3xl">{name}</p>
           <p className="mt-1 text-sm text-zinc-300">{tagline}</p>
         </div>
@@ -35,7 +42,7 @@ export function BrandShowcaseCard({
   if (to) {
     return (
       <Link to={to} className="group block text-left">
-        <GlassCard className="h-full !p-0" hover glow={false}>
+        <GlassCard className="h-full !p-0" hover={false} glow={false}>
           <div className="p-5 md:p-6">{inner}</div>
         </GlassCard>
       </Link>
@@ -44,7 +51,7 @@ export function BrandShowcaseCard({
 
   return (
     <motion.div layout className="text-left">
-      <GlassCard className="h-full !p-0" hover>
+      <GlassCard className="h-full !p-0" hover={false}>
         <div className="p-5 md:p-6">{inner}</div>
       </GlassCard>
     </motion.div>

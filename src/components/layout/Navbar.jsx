@@ -4,13 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import officialLogo from '../../assets/logos/saffco.svg'
 
 const nav = [
-  { to: '/', label: 'Home' },
-  { to: '/duaa', label: 'Duaa' },
-  { to: '/cura', label: 'Cura' },
-  { to: '/akeedh', label: 'Akeedh' },
-  { to: '/al-tashkeel', label: 'Al Tashkeel' },
-  { to: '/team', label: 'About Us' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/', label: 'HOME' },
+  { to: '/duaa', label: 'DUAA' },
+  { to: '/cura', label: 'CURA' },
+  { to: '/akeedh', label: 'AKEEDH' },
+  { to: '/al-tashkeel', label: 'AL TASHKEEL' },
+  { to: '/team', label: 'ABOUT US' },
+  { to: '/contact', label: 'CONTACT' },
 ]
 
 function desktopLink({ isActive }) {

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import curaHero from '../assets/cura.png'
+import curaLogo from '../assets/logos/cura-logo.png'
 import curaLab from '../assets/cura-lab.jpeg'
 import { IMG } from '../data/assets'
 import { MotionSection } from '../components/ui/MotionSection'
@@ -37,14 +38,18 @@ export function Cura() {
               Brand under development
             </div>
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.4em] text-cyan-700">Clinical luxury</p>
-            <h1 className="mt-5 font-body text-5xl font-medium tracking-tight text-zinc-950 md:text-6xl lg:text-7xl">
-              Cura
+            <h1 className="mt-5">
+              <img
+                src={curaLogo}
+                alt="Cura"
+                className="block h-auto w-auto max-h-[4rem] md:max-h-[5rem] lg:max-h-[4.5rem]"
+              />
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-zinc-600 md:text-2xl">
               Results-driven skincare grounded in science.
             </p>
             <p className="mt-6 max-w-xl text-zinc-600">
-              Formulations engineered for visible change — where biotechnology meets sensorial elegance.
+              Formulations engineered for visible change where biotechnology meets sensorial elegance.
             </p>
           </motion.div>
 
@@ -121,7 +126,7 @@ export function Cura() {
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/90">Atmosphere</p>
             <h2 className="mt-4 font-body text-4xl md:text-5xl">The glow of evidence</h2>
             <p className="mt-6 text-zinc-400">
-              Cura translates complex dermatological insight into rituals you feel working — night after night,
+              Cura translates complex dermatological insight into rituals you feel working night after night,
               season after season.
             </p>
           </motion.div>

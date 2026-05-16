@@ -12,7 +12,7 @@ const ease = [0.22, 1, 0.36, 1]
 const team = [
   { name: 'Syed Abbas', role: 'Chairman', seed: 'Al Tashkeel International LLC group of companies', photo: photoAbbas },
   { name: 'Faizur Rahaman Abbas', role: 'Chief Executive Officer', seed: 'House of Saffco', photo: photoFaizur },
-  { name: 'Mohammed Fahim Badusha', role: 'Director Of Operations', seed: 'House of Saffco', photo: photoFahim }
+  { name: 'Mohamed Fahim Bathusa', role: 'Director Of Operations', seed: 'House of Saffco', photo: photoFahim }
 ]
 
 function MemberCard({ member, index }) {

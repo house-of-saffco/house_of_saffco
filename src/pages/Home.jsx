@@ -41,13 +41,13 @@ export function Home() {
             transition={{ duration: 0.75, delay: 0.08, ease }}
             className="mt-6 max-w-4xl font-body text-5xl font-medium leading-[1.05] tracking-tight text-zinc-50 md:text-6xl lg:text-7xl"
           >
-            House of Saffco
+            House of <span className='text-gradient-gold'>Saffco</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.18, ease }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400 md:text-xl"
+            className="mt-8 max-w-xl text-xl leading-relaxed text-zinc-400 md:text-2xl"
           >
             Where fragrance artistry, clinical skincare, and curated beauty commerce converge — elevated
             through world-class distribution.
@@ -107,6 +107,7 @@ export function Home() {
             tagline="Science-led skincare, luminous results."
             image={curaHero}
             accent="from-cyan-400/20"
+            bottomScrim
           />
           <BrandShowcaseCard
             to="/akeedh"
@@ -135,7 +136,7 @@ export function Home() {
               </h2>
               <p className="mt-2 text-sm uppercase tracking-widest text-zinc-500">Muscat, Sultanate of Oman</p>
               <p className="mt-8 text-lg leading-relaxed text-zinc-400">
-                Strategic reach across the Gulf and beyond — ensuring each House of Satko brand arrives with the
+                Strategic reach across the Gulf and beyond ensuring each House of Satko brand arrives with the
                 integrity, timing, and presentation it deserves.
               </p>
               <Link

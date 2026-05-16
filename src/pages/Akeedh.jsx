@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import akeedh from '../assets/akeedh.png'
+import akeedhLogo from '../assets/logos/akeedh-logo.png'
 import beautyImg from '../assets/beauty.jpeg'
 import skinImg from '../assets/skin.jpeg'
 import toolsImg from '../assets/tools.jpeg'
@@ -44,14 +45,19 @@ export function Akeedh() {
             transition={{ duration: 0.7, ease }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-fuchsia-300/90">E-commerce</p>
-            <h1 className="mt-4 font-body text-5xl font-medium tracking-tight text-white md:text-6xl lg:text-7xl">
-              Akeedh
+            <h1 className="mt-4">
+              <img
+                src={akeedhLogo}
+                alt="Akeedh"
+                className="block h-auto w-auto max-h-[4rem] md:max-h-[5rem] lg:max-h-[4.5rem]"
+              />
             </h1>
             <p className="mt-6 max-w-xl text-xl leading-relaxed text-zinc-300">
-              A dedicated platform for health and beauty — where editorial taste meets seamless shopping.
+              A dedicated platform for health and beauty where editorial taste meets seamless shopping.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <span className="rounded-full border border-fuchsia-500/35 bg-fuchsia-500/15 px-5 py-2 text-xs uppercase tracking-widest text-fuchsia-100">
+              <span className="inline-flex items-center gap-3 rounded-full border border-fuchsia-500/35 bg-fuchsia-500/15 px-5 py-2 text-xs uppercase tracking-widest text-fuchsia-100">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-rose-400 shadow-[0_0_12px_#fb7185]" />
                 Launching soon
               </span>
             </div>
