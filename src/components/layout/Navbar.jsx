@@ -34,7 +34,7 @@ export function Navbar() {
             <img
               src={officialLogo}
               alt="House of Saffco"
-              className="h-8 w-auto object-contain md:h-20"
+              className="h-13 w-auto object-contain md:h-20"
             />
           </span>
         </Link>

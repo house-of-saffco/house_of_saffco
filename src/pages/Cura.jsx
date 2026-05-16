@@ -70,7 +70,7 @@ export function Cura() {
           eyebrow="Innovation"
           title="Laboratory precision. Skin-level poetry."
           titleClassName="font-body"
-          subtitle="Every molecule earns its place — tested, traceable, and designed for the modern complexion under real environmental stress."
+          subtitle="Every molecule earns its place. Tested, traceable, and designed for the modern complexion under real environmental stress."
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {[

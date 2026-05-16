@@ -127,7 +127,7 @@ export function Contact() {
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-champagne">Contact</p>
             <h1 className="mt-4 font-body text-4xl text-zinc-50 md:text-5xl">Let&apos;s compose what&apos;s next.</h1>
             <p className="mt-6 text-lg leading-relaxed text-zinc-500">
-              For any inquiries contact us — our team responds with discretion and speed.
+              For any inquiries contact us. <br />Our team responds with discretion and speed.
             </p>
 
             <GlassCard className="mt-10 !p-6" glow={false}>

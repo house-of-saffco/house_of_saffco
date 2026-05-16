@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { IMG } from '../data/assets'
 import { MotionSection } from '../components/ui/MotionSection'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { GlassCard } from '../components/ui/GlassCard'
@@ -19,7 +18,7 @@ import lotLuluLogo from '../assets/logos/lot-lulu.jpg'
 import nestoLogo from '../assets/logos/nesto-logo.svg'
 import malmartLogo from '../assets/logos/Malmart-Logo.png'
 import omanImage from '../assets/oman.jpeg'
-import alQabayelLogo from '../assets/logos/al_kabayel.svg'
+import alQabayelLogo from '../assets/logos/al_qabayel.jpg'
 import efmLogo from '../assets/logos/Emirates-flower-market.webp'
 import alTamamLogo from '../assets/logos/altamam.webp'
 import msMaxLogo from '../assets/logos/msmax.webp'
@@ -28,6 +27,7 @@ import indiaFlag from '../assets/flag/india.jpeg'
 import bahrainFlag from '../assets/flag/bahrain.webp'
 import kuwaitFlag from '../assets/flag/kuwait.jpeg'
 import qatarFlag from '../assets/flag/qatar.jpeg'
+import saudiFlag from '../assets/flag/saudi.png'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -70,6 +70,7 @@ const exportRegionFlags = [
   { src: bahrainFlag, alt: 'Bahrain' },
   { src: kuwaitFlag, alt: 'Kuwait' },
   { src: qatarFlag, alt: 'Qatar' },
+  { src: saudiFlag, alt: 'Saudi Arabia' },
 ]
 
 function PartnerChips({ items }) {
@@ -176,28 +177,12 @@ function NetworkCard({ eyebrow, title, items, logoItems, flagItems, showAndMore 
 export function AlTashkeel() {
   return (
     <div className="relative isolate w-full flex flex-col bg-obsidian">
-      {/* One cinematic stack for the whole route — height follows page content; single document scroll */}
-      <div className="pointer-events-none absolute inset-0 z-0 min-h-full w-full" aria-hidden>
-        <motion.div
-          initial={{ scale: 1.03, opacity: 1 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease }}
-          className="absolute inset-0 min-h-full w-full bg-cover bg-center bg-no-repeat will-change-transform"
-          style={{ backgroundImage: `url(${IMG.omanCoast})` }}
-        />
+      {/* Hero */}
+      <section className="relative z-10 flex min-h-[82vh] flex-col justify-end border-b border-white/5 px-5 pb-20 pt-28 md:min-h-[85vh] md:px-8 md:pb-24 lg:px-10 lg:pb-28">
         <div
-          className="absolute inset-0 min-h-full w-full bg-cover bg-center bg-no-repeat opacity-35 mix-blend-overlay"
-          style={{ backgroundImage: `url(${IMG.muscatCity})` }}
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_0%,rgba(201,169,98,0.12),transparent_55%)]"
+          aria-hidden
         />
-        <div className="absolute inset-0 min-h-full bg-gradient-to-b from-obsidian/45 via-obsidian/80 to-obsidian" />
-        <div className="absolute inset-0 min-h-full bg-[radial-gradient(ellipse_120%_80%_at_50%_0%,rgba(201,169,98,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 min-h-full bg-[radial-gradient(ellipse_at_50%_100%,rgba(201,169,98,0.12),transparent_50%)]" />
-        <div className="noise-overlay absolute inset-0 min-h-full opacity-45" />
-      </div>
-
-      {/* Hero: in-flow content only — no overflow-hidden, no nested scroll */}
-      <section className="relative z-10 flex min-h-[82vh] flex-col justify-end px-5 pb-20 pt-28 md:min-h-[85vh] md:px-8 md:pb-24 lg:px-10 lg:pb-28">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 top-[35%] bg-gradient-to-b from-transparent via-obsidian/30 to-obsidian/85 md:top-[40%]" aria-hidden />
         <div className="relative mx-auto flex w-full max-w-7xl flex-col justify-end -translate-y-25">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -221,7 +206,7 @@ export function AlTashkeel() {
             transition={{ duration: 0.6, delay: 0.14, ease }}
             className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400"
           >
-            Sophisticated distribution for luxury and lifestyle brands — connecting exceptional products with
+            Sophisticated distribution for luxury and lifestyle brands connecting exceptional products with
             discerning markets across the region and beyond.
           </motion.p>
         </div>
@@ -264,7 +249,7 @@ export function AlTashkeel() {
           eyebrow="Network"
           title="Distribution depth, brand partnerships, and regional reach."
           titleClassName="font-body"
-          subtitle="Decades of relationships across suppliers, house brands, and major retail — with exports extending beyond the Gulf."
+          subtitle="Decades of relationships across suppliers, house brands, and major retail with exports extending beyond the Gulf."
         />
 
         <motion.div

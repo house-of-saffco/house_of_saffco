@@ -25,8 +25,8 @@ export function Footer() {
               House of Saffco
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-zinc-500">
-              A curated ecosystem of luxury fragrance, science-led skincare, and premium beauty commerce —
-              distributed with precision through Al Tashkeel International LLC.
+              A curated ecosystem of luxury fragrance, science-led skincare, and premium beauty commerce.
+              Distributed with precision through Al Tashkeel International LLC.
             </p>
             <SocialLinks className="mt-8" />
           </div>
@@ -46,22 +46,22 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-champagne-dim">Muscat</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-champagne-dim">REGION & CONTACT</p>
             <p className="mt-5 text-sm leading-relaxed text-zinc-400">
-              Al Tashkeel International LLC
+              House of Saffco
               <br />
-              Sultanate of Oman
+              Muscat, Sultanate of Oman
             </p>
             <a
-              href="mailto:management@houseofsaffco"
+              href="mailto:management@houseofsaffco.com"
               className="mt-3 inline-block text-sm text-champagne transition-opacity hover:opacity-80"
             >
-              management@houseofsaffco
+              management@houseofsaffco.com
             </a>
           </div>
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/[0.06] pt-8 text-xs text-zinc-600 md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} House of Saffco. All rights reserved.</p>
+          <p>© 2025 House of Saffco. All rights reserved.</p>
         </div>
       </div>
     </footer>

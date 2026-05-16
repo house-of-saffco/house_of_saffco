@@ -16,7 +16,7 @@ export function Home() {
   return (
     <div className="flex flex-1 flex-col">
       {/* Hero */}
-      <section className="relative min-h-[92vh] overflow-hidden">
+      <section className="relative min-h-0 overflow-hidden md:min-h-[92vh]">
         <div
           className="absolute inset-0 scale-105 bg-cover bg-center"
           style={{ backgroundImage: `url(${IMG.heroLuxury})` }}
@@ -26,7 +26,7 @@ export function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(201,169,98,0.18),transparent_55%)]" aria-hidden />
         <div className="noise-overlay absolute inset-0" aria-hidden />
 
-        <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-5 pb-24 pt-32 md:px-8 lg:px-10 lg:pb-32">
+        <div className="relative mx-auto flex max-w-7xl flex-col justify-start px-5 pb-16 pt-6 md:min-h-[92vh] md:justify-end md:px-8 md:pb-24 md:pt-32 lg:px-10 lg:pb-32">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export function Home() {
             transition={{ duration: 0.7, delay: 0.18, ease }}
             className="mt-8 max-w-xl text-xl leading-relaxed text-zinc-400 md:text-2xl"
           >
-            Where fragrance artistry, clinical skincare, and curated beauty commerce converge — elevated
+            Where fragrance artistry, clinical skincare, and curated beauty commerce converge elevated
             through world-class distribution.
           </motion.p>
           <motion.div
@@ -91,7 +91,7 @@ export function Home() {
           eyebrow="Portfolio"
           title="The brand ecosystem"
           titleClassName="font-body"
-          subtitle="Three signature houses under one vision — each with a distinct voice, united by uncompromising quality."
+          subtitle="Three signature houses under one vision each with a distinct voice, united by uncompromising quality."
         />
         <div className="grid gap-6 md:grid-cols-3">
           <BrandShowcaseCard
@@ -164,7 +164,13 @@ export function Home() {
             <SectionHeading
               align="left"
               eyebrow="Vision"
-              title="Luxury is a language — we speak it fluently."
+              title={
+                <>
+                  Luxury is a language.
+                  <br />
+                  We speak it fluently.
+                </>
+              }
               titleClassName="font-body"
               subtitle="From olfactive storytelling to dermatological rigor and seamless digital commerce, House of Satko defines a new standard for regional luxury houses with global ambition."
             />

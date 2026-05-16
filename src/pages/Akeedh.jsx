@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import akeedh from '../assets/akeedh.png'
 import akeedhLogo from '../assets/logos/akeedh-logo.png'
-import beautyImg from '../assets/beauty.jpeg'
-import skinImg from '../assets/skin.jpeg'
-import toolsImg from '../assets/tools.jpeg'
+import beautyImg from '../assets/beauty.png'
+import skinImg from '../assets/skin.png'
+import toolsImg from '../assets/tools.png'
 import { MotionSection } from '../components/ui/MotionSection'
 import { GlassCard } from '../components/ui/GlassCard'
 import { SectionHeading } from '../components/ui/SectionHeading'
@@ -11,25 +11,25 @@ import { SectionHeading } from '../components/ui/SectionHeading'
 const ease = [0.22, 1, 0.36, 1]
 
 const tiles = [
-  { title: 'Skin rituals', meta: 'New arrivals weekly', img: skinImg },
-  { title: 'Wellness systems', meta: 'Curated routines', img: beautyImg },
+  { title: 'Skin rituals', meta: 'Radiance daily', img: skinImg },
+  { title: 'Makeup Essentials', meta: 'Modern glam', img: beautyImg },
   { title: 'Beauty tech', meta: 'Devices & tools', img: toolsImg },
 ]
 
 export function Akeedh() {
   return (
     <div className="relative isolate flex w-full flex-col bg-obsidian">
-      <section className="relative z-10 mx-auto w-full max-w-[2048px]">
-        <div className="pointer-events-none absolute inset-x-0 top-0 aspect-[2048/1365] w-full" aria-hidden>
+      <section className="relative z-10 mx-auto w-full max-w-[2048px] overflow-hidden md:overflow-visible">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 min-h-[88vh] w-full md:aspect-[2048/1365] md:min-h-0"
+          aria-hidden
+        >
           <motion.div
             initial={{ scale: 1.02, opacity: 1 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.1, ease }}
-            className="absolute inset-0 bg-cover bg-no-repeat"
-            style={{
-              backgroundImage: `url(${akeedh})`,
-              backgroundPosition: 'center 42%',
-            }}
+            className="absolute inset-0 bg-cover bg-[left_30%_center] bg-no-repeat brightness-[1.12] md:bg-[center_42%] md:brightness-100"
+            style={{ backgroundImage: `url(${akeedh})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-950/45 via-obsidian/82 to-obsidian" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,rgba(244,63,94,0.14),transparent_58%)]" />

@@ -4,7 +4,7 @@ import { SectionHeading } from '../components/ui/SectionHeading'
 
 import photoAbbas from '../assets/people/abbas.webp'
 import photoFaizur from '../assets/people/faizur.webp'
-import photoFahim from '../assets/people/fahim.jpeg'
+import photoFahim from '../assets/people/fahim.webp'
 
 const ease = [0.22, 1, 0.36, 1]
 
