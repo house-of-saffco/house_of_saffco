@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
+import { PageSeo } from '../PageSeo'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 
@@ -17,6 +18,7 @@ export function MainLayout() {
 
   return (
     <div className="min-h-dvh flex flex-col bg-obsidian">
+      <PageSeo />
       <ScrollToTop />
       <Navbar />
       <AnimatePresence mode="wait">

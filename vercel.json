@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/duaa", "destination": "/index.html" },
+    { "source": "/cura", "destination": "/index.html" },
+    { "source": "/akeedh", "destination": "/index.html" },
+    { "source": "/al-tashkeel", "destination": "/index.html" },
+    { "source": "/team", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" }
+  ]
+}
