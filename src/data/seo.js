@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://houseofsaffco.com'
+export const SITE_URL = 'https://www.houseofsaffco.com'
 
 /** @type {Record<string, { title: string; description: string }>} */
 export const PAGE_SEO = {
